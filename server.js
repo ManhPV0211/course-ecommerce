@@ -1,5 +1,7 @@
 "use strick";
 
+import dotenv from "dotenv";
+dotenv.config();
 import app from "./src/ver.1/app.js";
 
 const PORT = process.env.PORT || 3001;

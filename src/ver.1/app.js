@@ -6,6 +6,7 @@ import compression from "compression";
 import morgan from "morgan";
 
 import Database from "./database/connectMongodb.js";
+import initAppRoutes from "./routes/initAppRoutes.js";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(helmet());
 app.use(compression());
 
 Database.getConnectionMongoDB();
+
+initAppRoutes(app);
 
 app.use((req, res, next) => {
     const error = new Error("Not Found...");

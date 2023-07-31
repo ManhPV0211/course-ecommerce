@@ -49,6 +49,6 @@ const courseSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-const courseModel = mongoose.model(DOCUMENT_NAME, courseSchema);
+const CourseModel = mongoose.model(DOCUMENT_NAME, courseSchema);
 
-export default courseModel;
+export default CourseModel;

@@ -1,9 +1,11 @@
 "use strick";
 
+import accessServices from "../services/accessServices.js";
+
 class AccessControllers {
     register = async (req, res, next) => {
         try {
-            res.send("register api ok")
+            res.status(200).json(await accessServices.register(req.body));
         } catch (error) {
             return error
         }

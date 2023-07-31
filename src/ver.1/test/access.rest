@@ -1,0 +1,11 @@
+@url=http://localhost:3000/v1/api/access
+
+###
+POST {{url}}/register
+Content-Type: application/json
+
+{
+    "name": "khanh ngan",
+    "email": "khanhngan@gmail.com",
+    "password": "abc123"
+}

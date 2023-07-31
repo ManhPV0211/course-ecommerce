@@ -3,7 +3,7 @@
 import accessRoutes from "./accessRoutes.js";
 
 function initAppRoutes(app) {
-    app.use("/api/v1/access", accessRoutes)
+    app.use("/v1/api/access", accessRoutes)
 }
 
 export default initAppRoutes;
