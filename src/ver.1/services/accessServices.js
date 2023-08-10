@@ -77,10 +77,10 @@ class AccessServices {
                 code: "mpv-201",
                 mesg: "Success create new course",
                 metaData: {
-                    newCourse: getInfoData(
-                        fields = ["name", "email", "role"],
-                        object = newCourse
-                    ),
+                    newCourse: getInfoData({
+                        fields: ["_id", "name", "email"],
+                        object: newCourse
+                    }),
                     tokens
                 }
             }

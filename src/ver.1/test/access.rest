@@ -1,8 +1,9 @@
-@url=http://localhost:3000/v1/api/access
+@url=http://localhost:3001/v1/api/access
 
 ###
 POST {{url}}/register
 Content-Type: application/json
+x-api-key: 1234abcd
 
 {
     "name": "khanh ngan",

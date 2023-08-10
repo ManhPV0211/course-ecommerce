@@ -21,18 +21,17 @@ Database.getConnectionMongoDB();
 initAppRoutes(app);
 
 app.use((req, res, next) => {
-    const error = new Error("Not Found...");
-    error.status = 400;
+    const error = new Error("Router is Not Found...");
+    error.status = 404;
     next(error);
 });
 
-app.use((error, req, res, next) => {
-    res.status(error.status || 500).json({
-        error: {
-            status: error.status || 500,
-            mesg: error.message || "Interval Error Server"
-        }
-    })
-})
+app.use((err, req, res, next) => {
+    const statusCode = err.status || 500;
+    return res.status(statusCode).json({
+        code: `mpv-${statusCode}`,
+        mesg: err.message || "Internal Server Error..."
+    });
+});
 
 export default app;
